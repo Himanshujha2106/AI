@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Notes</title>
+</head>
+<body>
+  
+    <div id="notes-container">
+      {{ body }}
+    </div>
+ 
+
+  <style>
+    #notes-container {
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    #notes-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #notes-container li {
+      margin-bottom: 10px;
+    }
+  </style>
+</body>
+</html>
