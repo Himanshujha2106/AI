@@ -32,7 +32,7 @@ def scrape_website_text(url):
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        paragraphs = soup.find_all('p')
+        paragraphs = soup.find_all('p','div')
 
         text = '\n\n'.join([p.get_text() for p in paragraphs])
 
@@ -71,8 +71,9 @@ def result(request):
     keyword=request.POST.get('keyword')
     
     url = get_top_result(keyword)
+    print(url)
     website_text = scrape_website_text(url)
-
+    print(website_text)
     if website_text:
         # Remove symbol numbers from the scraped text
         cleaned_text = remove_symbol_numbers(website_text)
